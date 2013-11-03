@@ -13,6 +13,9 @@ gem 'therubyracer'
 
 gem 'twilio-ruby'
 
+# Parsing and verifying phone numbers
+gem 'global_phone'
+
 # Group specific gems
 group :test do
   gem 'factory_girl_rails'
