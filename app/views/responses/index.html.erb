@@ -1,5 +1,6 @@
+<h1>Total: <%= @responses.size %></h1>
 <ul>
   <% @responses.each do |res| %>
-    <li><%= res.is_going? %></li>
+    <li><%= res.brother.name %></li>
   <% end %>
 </ul>
