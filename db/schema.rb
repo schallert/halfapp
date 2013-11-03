@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20131103213000) do
 
   create_table "brothers", force: true do |t|
     t.string   "name"
-    t.string   "phoneNumber"
+    t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "responses", force: true do |t|
-    t.boolean  "isGoing"
+    t.boolean  "is_going"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

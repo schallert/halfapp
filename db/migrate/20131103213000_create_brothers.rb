@@ -2,7 +2,7 @@ class CreateBrothers < ActiveRecord::Migration
   def change
     create_table :brothers do |t|
       t.string :name
-      t.string :phoneNumber
+      t.string :phone_number
 
       t.timestamps
     end
