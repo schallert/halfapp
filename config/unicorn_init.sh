@@ -18,7 +18,7 @@ set -e
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
 
-USER=matt
+USER=sigep
 APP_ROOT=/opt/halfapp/current
 
 PID=/tmp/unicorn.halfapp.pid

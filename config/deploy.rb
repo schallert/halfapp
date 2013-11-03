@@ -1,9 +1,9 @@
 require "bundler/capistrano"
 
-server("54.235.207.228", :app, :web, :db, { :primary => true })
+server("CREDENTIALS", :app, :web, :db, { :primary => true })
 
 set(:application, "halfapp")
-set(:user, "matt")
+set(:user, "CREDENTIALS")
 set(:deploy_to, "/opt/#{application}")
 set(:deploy_via, :remote_cache)
 set(:use_sudo, false)
@@ -38,7 +38,7 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    run "sudo ln -nfs #{current_path}/config/nginx_pinstopaper.conf /etc/nginx/sites-enabled/#{application}"
+    run "sudo ln -nfs #{current_path}/config/nginx_halfapp.conf /etc/nginx/sites-enabled/#{application}"
     run "sudo ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
 
     run "mkdir -p #{shared_path}/log"
@@ -46,7 +46,7 @@ namespace :deploy do
 
   task :setup_db_config do
     transfer :up, "config/database.yml", "#{release_path}/config/database.yml"
-    transfer :up, "config/application.yml", "#{release_path}/config/application.yml"
+    # transfer :up, "config/application.yml", "#{release_path}/config/application.yml"
     # run "cp #{release_path}/config/database.yml.sample #{release_path}/config/database.yml"
   end
 

@@ -27,7 +27,7 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'debugger'
-  gem 'capistrano'
+  gem 'capistrano', '2.15.5'
 end
 
 group :production do
