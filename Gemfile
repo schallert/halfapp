@@ -15,6 +15,7 @@ gem 'twilio-ruby'
 
 # Parsing and verifying phone numbers
 gem 'global_phone'
+gem 'global_phone_dbgen'
 
 # Group specific gems
 group :test do
