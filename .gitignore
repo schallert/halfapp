@@ -23,3 +23,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Contact info
+/lib/tasks/brothers.csv
