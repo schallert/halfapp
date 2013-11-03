@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103213000) do
+ActiveRecord::Schema.define(version: 20131103223431) do
 
   create_table "brothers", force: true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131103213000) do
     t.boolean  "is_going"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brother_id"
   end
 
 end
