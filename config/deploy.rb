@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require 'new_relic/recipes'
 
 server("CREDENTIALS", :app, :web, :db, { :primary => true })
 
@@ -28,6 +29,12 @@ after("deploy", "deploy:cleanup") # keep only the last 5 releases
 after("deploy", "deploy:reload_nginx")
 after("deploy:setup", "deploy:setup_config")
 
+# NewRelic
+after('deploy', 'newrelic:notice_deployment')
+after('deploy:update', 'newrelic:notice_deployment')
+after('deploy:migrations', 'newrelic:notice_deployment')
+after('deploy:cold', 'newrelic:notice_deployment')
+
 namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
@@ -49,6 +56,7 @@ namespace :deploy do
     # transfer :up, "config/application.yml", "#{release_path}/config/application.yml"
     # run "cp #{release_path}/config/database.yml.sample #{release_path}/config/database.yml"
     transfer :up, "lib/tasks/brothers.csv", "#{release_path}/lib/tasks/brothers.csv"
+    transfer :up, "config/newrelic.yml", "#{release_path}/config/newrelic.yml"
   end
 
   desc "Make sure local git is in sync with remote."
