@@ -17,6 +17,8 @@ gem 'twilio-ruby'
 gem 'global_phone'
 gem 'global_phone_dbgen'
 
+gem 'newrelic_rpm'
+
 # Group specific gems
 group :test do
   gem 'factory_girl_rails'
