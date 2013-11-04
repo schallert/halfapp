@@ -26,3 +26,6 @@
 
 # Contact info
 /lib/tasks/brothers.csv
+
+# NewRelic info
+/config/newrelic.yml
