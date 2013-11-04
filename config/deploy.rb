@@ -48,6 +48,7 @@ namespace :deploy do
     transfer :up, "config/database.yml", "#{release_path}/config/database.yml"
     # transfer :up, "config/application.yml", "#{release_path}/config/application.yml"
     # run "cp #{release_path}/config/database.yml.sample #{release_path}/config/database.yml"
+    transfer :up, "lib/tasks/brothers.csv", "#{release_path}/lib/tasks/brothers.csv"
   end
 
   desc "Make sure local git is in sync with remote."
