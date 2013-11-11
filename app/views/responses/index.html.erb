@@ -1,6 +1,6 @@
 <h1>Total: <%= @total %></h1>
 <ul>
   <% @responses.each do |res| %>
-    <li><%= res.brother.name %> <%= "+" + res.guests.to_s if res.guests > 0 %></li>
+    <li><%= res.brother.name %> <%= res.guests_formatted %></li>
   <% end %>
 </ul>

@@ -13,7 +13,7 @@ class ResponsesController < ApplicationController
       response = 'Error: phone number not found'
     else
       full_response = ''
-      if /^yes[0-9]?$/ =~ body.downcase
+      if /^yes\s?[0-9]?$/ =~ body.downcase
         if brother.responses.empty?
           message = 'you have been added'
           guests = 0
