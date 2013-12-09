@@ -1,6 +1,10 @@
-<h1>Total: <%= @total %></h1>
-<ul>
-  <% @responses.each do |res| %>
-    <li><%= res.brother.name %> <%= res.guests_formatted %></li>
-  <% end %>
-</ul>
+<div class="pure-g-r main">
+  <div class="pure-u-1">
+    <h1>Total: <%= @total %></h1>
+    <ul>
+      <% @responses.each do |res| %>
+        <li><%= res.brother.name %> <%= res.guests_formatted %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
