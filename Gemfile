@@ -19,6 +19,8 @@ gem 'global_phone_dbgen'
 
 gem 'newrelic_rpm'
 
+gem 'whenever', :require => false
+
 # Group specific gems
 group :test do
   gem 'factory_girl_rails'
