@@ -17,7 +17,7 @@
 #   runner "AnotherModel.prune_old_records"
 # end
 
-every 1.minute do
+every :tuesday, :at => '12pm' do
   rake "responses:reset"
 end
 
