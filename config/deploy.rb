@@ -1,5 +1,7 @@
 require "bundler/capistrano"
 require 'new_relic/recipes'
+set :whenever_command, "bundle exec whenever"
+require 'whenever/capistrano'
 
 server("CREDENTIALS", :app, :web, :db, { :primary => true })
 
