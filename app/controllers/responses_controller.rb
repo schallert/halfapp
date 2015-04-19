@@ -13,12 +13,13 @@ class ResponsesController < ApplicationController
       response = 'Error: phone number not found'
     else
       full_response = ''
-      if /^yes\s?[0-9]*?$/ =~ body.downcase
+      match = body.downcase.match(/^yes\s?(?<count>[0-9]*?)$/)
+      unless match.nil?
         if brother.responses.empty?
           message = 'you have been added'
           guests = 0
-          if body.downcase.last != "s"
-            guests = body.last.to_i
+          if count != ""
+            guests = count.to_i
           end
           Response.create(:is_going => true, :brother => brother, :guests => guests)
         else
