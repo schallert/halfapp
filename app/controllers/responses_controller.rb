@@ -14,12 +14,12 @@ class ResponsesController < ApplicationController
     else
       full_response = ''
       match = body.downcase.match(/^yes\s?(?<count>[0-9]*?)$/)
-      unless match.nil?
+      if !match.nil?
         if brother.responses.empty?
           message = 'you have been added'
           guests = 0
-          if count != ""
-            guests = count.to_i
+          if match[:count] != ""
+            guests = match[:count].to_i
           end
           Response.create(:is_going => true, :brother => brother, :guests => guests)
         else
