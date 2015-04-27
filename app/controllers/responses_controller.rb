@@ -10,7 +10,7 @@ class ResponsesController < ApplicationController
 
     brother = Brother.find_by(:phone_number => sender)
     unless brother
-      response = 'Error: phone number not found'
+      full_response = 'Your phone number was not recognized'
     else
       full_response = ''
       match = body.downcase.match(/^yes\s?(?<count>[0-9]*?)$/)
