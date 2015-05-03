@@ -12,7 +12,7 @@ set(:deploy_via, :remote_cache)
 set(:use_sudo, false)
 
 set(:scm, "git")
-set(:repository, "git@github.com:schallert/#{application}.git")
+set(:repository, "git@github.com:sigeppenntheta/halfapp.git")
 set(:branch, "master")
 
 # Make rbenv work
